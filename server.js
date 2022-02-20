@@ -1,8 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 
-const hostname = '127.0.0.1'
-const port = 80
+const port = process.env.PORT || 3000
 
 const app = express()
 
@@ -14,6 +13,6 @@ app.use(express.static('./'));
 // }
 app.use(cors())
 
-app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`)
+app.listen(port, () => {
+  console.log(`Server running at port ${port}`)
 })
